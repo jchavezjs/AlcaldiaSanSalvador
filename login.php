@@ -87,7 +87,7 @@
       							</div>
 	      						<div class="modal-footer">
 						        	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						        	<button type="button" class="btn btn-primary pad">Registrarse</button>
+						        	<button type="button" class="btn btn-primary">Registrarse</button>
 	      						</div>
       						</form>
 					    </div>
