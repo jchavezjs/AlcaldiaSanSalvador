@@ -30,7 +30,7 @@
 	</header>
 
 	<!--Estructura de login-->
-	<h1>Entraste :D</h1>
+	<h1 class="luis">Luisito Hola</h1>
   <form method="post" action="procesos/logout.php">
     <button class="btn btn-lg btn-primary btn-block" type="submit">Cerrar sesión</button>
   </form>
