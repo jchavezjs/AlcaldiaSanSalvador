@@ -56,7 +56,7 @@
         						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         						<h4 class="modal-title" id="exampleModalLabel">Registro de usuarios</h4>
       						</div>
-      						<form method="post" onSubmit="return validar()" action="registrarUsuario.php">
+      						<form method="post" action="registrarUsuario.php">
       							<div class="modal-body">
           							<div class="form-group">
             							<label for="recipient-name" class="control-label">Nombres:</label>
@@ -98,20 +98,7 @@
     </div>
 	
 	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-		function validar(){
-		    var pass1 = document.getElementById("txtPass1").value;
-		    var pass2 = document.getElementById("txtPass2").value;
-
-		    if (pass1 == pass2)
-		       alert("Las dos claves son iguales...\nRealizaríamos las acciones del caso positivo");
-		   return true;
-		    else
-		       alert("Las dos claves son distintas...\nRealizaríamos las acciones del caso negativo");
-		   return false;
-		}
-	</script> 
+	<script src="js/bootstrap.min.js"></script> 
 	<link rel="stylesheet" href="css/estilos.css">
 </body>
 </html>
