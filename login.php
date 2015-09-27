@@ -56,7 +56,7 @@
         						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         						<h4 class="modal-title" id="exampleModalLabel">Registro de usuarios</h4>
       						</div>
-      						<form method="post" action="registrarUsuario.php">
+      						<form method="post" onSubmit="return validar()" action="registrarUsuario.php">
       							<div class="modal-body">
           							<div class="form-group">
             							<label for="recipient-name" class="control-label">Nombres:</label>
@@ -64,19 +64,19 @@
           							</div>
 						        	<div class="form-group">
 						        		<label for="message-text" class="control-label">Apellidos: </label>
-						            	<input name="txtApellido"class="form-control" id="message-text">
+						            	<input name="txtApellido"class="form-control">
 						          	</div>
 						          	<div class="form-group">
 						            	<label for="message-text" class="control-label">Correo:</label>
-						            	<input name="txtCorreo" class="form-control" id="message-text">
+						            	<input name="txtCorreo" class="form-control">
 						          	</div>
           							<div class="form-group">
             							<label for="message-text" class="control-label">Contraseña:</label>
-            							<input name="txtPass1"type="password" class="form-control" id="message-text">
+            							<input name="txtPass1" type="password" class="form-control" >
           							</div>
 						          	<div class="form-group">
 						            	<label for="message-text" class="control-label">Repetir contraseña:</label>
-						          	  	<input name="txtPass2"type="password" class="form-control" id="message-text">
+						          	  	<input name="txtPass2" type="password" class="form-control" >
 						          	</div>
 						          	<div class="form-group">
 						            	<label for="message-text" class="control-label">Fotografia:</label>
@@ -86,7 +86,7 @@
       							</div>
 	      						<div class="modal-footer">
 						        	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						        	<button type="button" class="btn btn-primary">Registrarse</button>
+						        	<button type="submit" id="btnValidar" class="btn btn-primary">Registrarse</button>
 	      						</div>
       						</form>
 					    </div>
@@ -96,9 +96,22 @@
             </div>
         <div class="col-md-4"></div>
     </div>
-
+	
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script>
+		function validar(){
+		    var pass1 = document.getElementById("txtPass1").value;
+		    var pass2 = document.getElementById("txtPass2").value;
+
+		    if (pass1 == pass2)
+		       alert("Las dos claves son iguales...\nRealizaríamos las acciones del caso positivo");
+		   return true;
+		    else
+		       alert("Las dos claves son distintas...\nRealizaríamos las acciones del caso negativo");
+		   return false;
+		}
+	</script> 
 	<link rel="stylesheet" href="css/estilos.css">
 </body>
 </html>
