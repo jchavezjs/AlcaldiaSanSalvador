@@ -33,17 +33,30 @@
             <div class="col-md-4"></div><!-- Para centrar-->
             <div class="col-md-4" id="login"><!--Recuadro de login-->
                 <form class="form-signin" method="post" action="procesos/validar.php">
+                    <?php 
+                    	if(isset($_GET['a'])){
+                    		if ($_GET['a']=="2") {
+                    			echo "<div class='text-center'><h4 class='rojo'>Registro sastifactorio</h4></div>";
+                    		} elseif ($_GET['a']=="3") {
+                    			echo "<div class='text-center'><h4 class='rojo'>Correo ya existe</h4></div>";
+                    		}
+                    		echo "<div class='text-center'><p class='blanco'>Usuario y/o contraseña incorrectas</p></div>";
+                    	}
+                    ?>
                     <div class="text-center">
                         <img id="avatar" src="images/defaultUser.png" alt="avatar">
                     </div>
                     <!--Mensaje de acceso denegado-->
                     <?php 
                     	if(isset($_GET['a'])){
-                    		echo "<div class='text-center'><p class='blanco'>Usuario y/o contraseña incorrectas</p></div>";
+                    		if ($_GET['a']=="1") {
+                    			echo "<div class='text-center'><p class='blanco'>Usuario y/o contraseña incorrectas</p></div>";
+                    		}
+                    		
                     	}
                     ?>
-                    <input type="text" class="form-control" placeholder="Usuario" name="txtUsuario" autocomplete="off" required>
-                    <input type="password" class="form-control" placeholder="Contraseña" name="txtPass" autocomplete="off" required>
+                    <input type="text" class="form-control" placeholder="Usuario" name="txtUsuario" autocomplete="off" >
+                    <input type="password" class="form-control" placeholder="Contraseña" name="txtPass" autocomplete="off" >
                     <div id="passid">
                     	<a href="#" >Haz olvidado tu contraseña</a>
                     </div>
@@ -56,37 +69,37 @@
         						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         						<h4 class="modal-title" id="exampleModalLabel">Registro de usuarios</h4>
       						</div>
-      						<form method="post" action="registrarUsuario.php">
+      						<form>
       							<div class="modal-body">
           							<div class="form-group">
-            							<label for="recipient-name" class="control-label">Nombres:</label>
+            							<label class="control-label">Nombres:</label>
             							<input name="txtNombre"type="text" class="form-control" id="recipient-name">
           							</div>
 						        	<div class="form-group">
-						        		<label for="message-text" class="control-label">Apellidos: </label>
+						        		<label class="control-label">Apellidos: </label>
 						            	<input name="txtApellido"class="form-control">
 						          	</div>
 						          	<div class="form-group">
-						            	<label for="message-text" class="control-label">Correo:</label>
+						            	<label class="control-label">Correo:</label>
 						            	<input name="txtCorreo" class="form-control">
 						          	</div>
           							<div class="form-group">
-            							<label for="message-text" class="control-label">Contraseña:</label>
+            							<label class="control-label">Contraseña:</label>
             							<input name="txtPass1" type="password" class="form-control" >
           							</div>
 						          	<div class="form-group">
-						            	<label for="message-text" class="control-label">Repetir contraseña:</label>
+						            	<label class="control-label">Repetir contraseña:</label>
 						          	  	<input name="txtPass2" type="password" class="form-control" >
 						          	</div>
 						          	<div class="form-group">
-						            	<label for="message-text" class="control-label">Fotografia:</label>
+						            	<label class="control-label">Fotografia:</label>
 						              	<input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
 						              	<button class="btn btn-default" type="reset">Reset</button>
 						          	</div>
       							</div>
 	      						<div class="modal-footer">
 						        	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						        	<button type="submit" id="btnValidar" class="btn btn-primary">Registrarse</button>
+						        	<button name="registrar" type="submit" id="btnValidar" class="btn btn-primary">Registrarse</button>
 	      						</div>
       						</form>
 					    </div>

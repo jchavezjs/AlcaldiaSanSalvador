@@ -2,11 +2,10 @@
  session_start();
  ob_start();
  session_destroy();
- echo 'Cerraste sesion';
  echo '<script> window.location="../login.php";</script>';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Saliendo...</title>
