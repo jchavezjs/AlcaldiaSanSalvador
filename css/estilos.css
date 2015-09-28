@@ -43,6 +43,13 @@ button {
 .pad{
 	padding-bottom: 10%;
 }
-p{
+.blanco p{
 	color: #fff;
+}
+.rojo p {
+	color: #F70000;
+}
+.ver{
+	padding-top: 500px;
+	padding-bottom: 500px;
 }

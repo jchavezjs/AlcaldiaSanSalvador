@@ -29,11 +29,27 @@
 		</div>	
 	</header>
 
-	<!--Estructura de login-->
-	<h1 class="luis">Luisito Hola</h1>
-  <form method="post" action="procesos/logout.php">
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Cerrar sesión</button>
-  </form>
+	<!--Estructura del index-->
+	<div class="col-md-12"></div>
+		<div class="container">
+			<div class="rows">
+				<a>
+					<div class="col-md-4 ver" id="">
+						<h1 class="cuadro">Perfil</h1>
+					</div>
+				</a>
+				<a>
+					<div class="col-md-4 ver" id="">
+						<h1 class="cuadro">Encuestas</h1>
+					</div>
+				</a>
+				<a>
+					<div class="col-md-4 ver" id="">
+						<h1 class="cuadro">Estadisticas</h1>
+					</div>
+				</a>
+			</div>
+		</div>
   
 
 	<script src="js/jquery.js"></script>
