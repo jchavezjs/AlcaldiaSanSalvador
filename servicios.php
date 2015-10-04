@@ -6,8 +6,9 @@
   }
 
   include 'procesos/conexion.php';
-  $idServicio = $_GET['a'];
-  $sql= mysql_query("SELECT * FROM preguntas where activo='si' and idServicio='$idServicio'");
+  $sql= mysql_query("SELECT * FROM servicio where activo='si'");
+  $cantidad = mysql_num_rows($sql);
+  $cantidad3 = $cantidad % 3;
 ?>
 <!--Inciamos a modelar nuestro login-->
 <!DOCTYPE html>
@@ -54,7 +55,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-						<p class="main-heading">Evalue Segun crea usted conveniente</p>
+						<p class="main-heading">Seleccione el servicio a evaluar</p>
 					</div>
 				</div>
 			</div>		
@@ -63,15 +64,35 @@
 	<section id="ser">
 		<div class="container">
 			<?php 
+				$r=0;
+				$i=0;
 				while($row = mysql_fetch_array($sql)){
-					echo "<h4>".$row['pregunta']."</h4><div class='rows'>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='1'>Muy malo</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='2'>Malo</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='3'> Regular</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='4'> Bueno</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='5'> Muy bueno</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='6'> Excelente</label></div>
-					</div>";
+					if ($cantidad3==0) {
+						
+						echo "<div class='col-md-4 serviciosdiv text-center'><h3>". $row['nombreServicio']."</h3><a href='encuesta.php?a=".$row['idServicio']."' class='btn btn-success'>Hacer Encuesta</a></div>";
+						
+					}
+					elseif($cantidad3==2){
+						
+						if (($cantidad - $i)>2) {
+							echo "<div class='col-md-4 serviciosdiv text-center'><h3>". $row['nombreServicio']."</h3><a href='encuesta.php?a=".$row['idServicio']."' class='btn btn-success'>Hacer Encuesta</a></div>";
+						}
+						else{
+							echo "<div class='col-md-6 serviciosdiv text-center'><h3>". $row['nombreServicio']."</h3><a href='encuesta.php?a=".$row['idServicio']."' class='btn btn-success'>Hacer Encuesta</a></div>";
+						}
+					
+					}
+					elseif($cantidad3==1){
+						if (($cantidad - $i)>1) {
+							
+							echo "<div class='col-md-4 serviciosdiv text-center fluid'><h3>". $row['nombreServicio']."</h3><a href='encuesta.php?a=".$row['idServicio']."' class='btn btn-success'>Hacer Encuesta</a></div>";
+						
+						}
+						else{
+							echo "<div class='col-md-12 serviciosdiv text-center fluid'><h3>". $row['nombreServicio']."</h3><a href='encuesta.php?a=".$row['idServicio']."' class='btn btn-success'>Hacer Encuesta</a></div>";
+						}
+					}
+					$i++;
 				}
 			 ?>
 		</div>

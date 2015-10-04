@@ -19,15 +19,18 @@ a:hover{
 	background: #F3F6FF;
 }
 #logo{
-	width: 40%;
-	padding-top: 1%;
-	padding-bottom: 1%;
+	width: 175px;
+	height: 70px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
-
 #avatar{
 	width: 70px;
-	padding-top: 5%;
+	height: 70px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
+
 #passid a{
 	text-decoration: none;
 	color: white;
@@ -49,12 +52,6 @@ button {
 }
 .pad{
 	padding-bottom: 10%;
-}
-.blanco p{
-	color: #fff;
-}
-.rojo p {
-	color: #F70000;
 }
 .ver{
 	padding-top: 500px;
@@ -79,21 +76,22 @@ button {
 	color:white;
 	padding-bottom: 5px;
 }
-#op1:hover{
+#op4{
+	background-color: #E03D24;
+	color:white;
+	padding-bottom: 5px;
+}
+#op5{
+	background-color: #0EA0FF;
+	color:white;
+	padding-bottom: 5px;
+}
+#op1:hover,#op2:hover, #op3:hover, #op4:hover,  #op5:hover {
 	background-color: #252525;
 	color:white;
 	padding-bottom: 5px;
 }
-#op2:hover{
-	background-color: #252525;
-	color:white;
-	padding-bottom: 5px;
-}
-#op3:hover{
-	background-color: #252525;
-	color:white;
-	padding-bottom: 5px;
-}
+
 .intro {
     padding-top: 90px;
     height: auto;
@@ -101,6 +99,22 @@ button {
     text-align: center;
     color: #fff;
     background: url(../images/sansalvadorback.jpg) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    display: table;
+    width: 100%;
+}
+#intros {
+    padding-top: 90px;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../images/sansalvadorbacks.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -166,4 +180,52 @@ p{
 
 .cont > h3 > small{
 		color: white;
+}
+.LV_validation_message{
+	display: block;
+}
+.LV_invalid{
+	color: #CC0000;
+}
+.LV_valid{
+	color: #00CC00;
+}
+.blanco > p{
+	color: #fff;
+}
+.rojo > p {
+	color: #F70000;
+}
+.integrantes{
+	width: 40%;
+}
+footer{
+	background: #2f2f2f;
+	color: white;
+}
+.socialn{
+	width:15%;
+	padding: 1%;
+}
+#plac{
+	background: #2f2f2f;
+	color: white;
+	padding: 1%;
+}
+#imgreg{
+	height: 150px;
+}
+.serviciosdiv{
+	padding: 5%;
+	background: #3D95FF;
+	color: white;
+	border: 2px solid #252525;
+}
+.serviciosdiv:hover{
+	padding: 5%;
+	background: #252525;
+	color: white;
+}
+#ser{
+	padding: 2%;
 }
