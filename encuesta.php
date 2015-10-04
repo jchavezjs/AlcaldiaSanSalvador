@@ -8,6 +8,8 @@
   include 'procesos/conexion.php';
   $idServicio = $_GET['a'];
   $sql= mysql_query("SELECT * FROM preguntas where activo='si' and idServicio='$idServicio'");
+  $nombreServicio = mysql_query("SELECT nombreServicio FROM servicio where idServicio='$idServicio'");
+  $row = mysql_fetch_array($nombreServicio);
 ?>
 <!--Inciamos a modelar nuestro login-->
 <!DOCTYPE html>
@@ -54,28 +56,33 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-						<p class="main-heading">Evalue Segun crea usted conveniente</p>
+						<p class="main-heading">Encuesta del departamento de <?php echo $row['nombreServicio']; ?></p>
 					</div>
 				</div>
 			</div>		
 		</div>
 	</header>
 	<section id="ser">
-		<div class="container">
-			<?php 
-				while($row = mysql_fetch_array($sql)){
-					echo "<h4>".$row['pregunta']."</h4><div class='rows'>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='1'>Muy malo</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='2'>Malo</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='3'> Regular</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='4'> Bueno</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='5'> Muy bueno</label></div>
-						<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='6'> Excelente</label></div>
-					</div>";
-				}
-			 ?>
-		</div>
-
+		<form action=<?php echo "'procesos/evaluarEncuesta.php?a=".$_GET['a']."'"; ?> method="post">
+			<div class="container">
+				<?php 
+					while($row = mysql_fetch_array($sql)){
+						echo "<h4>".$row['pregunta']."</h4><div class='rows'>
+							<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='1'>Muy malo</label></div>
+							<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='2'>Malo</label></div>
+							<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='3'> Regular</label></div>
+							<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='4'> Bueno</label></div>
+							<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='5'> Muy bueno</label></div>
+							<div class='col-md-2'><label class='radio-inline'><input type='radio' name='".$row['idPregunta']."' value='6'> Excelente</label></div>
+						</div>";
+					}
+				 ?>
+				 <div class="rows text-center">
+				 	<button type="submit" name="cancelar" class="btn btn-lg btn-danger">Cancelar</button>
+				 	<button type="submit" name="evaluar" class="btn btn-lg btn-primary">Evaluar</button>
+				 </div>
+			</div>
+		</form>
 	</section>
 	<footer>
 		<div class="container">
