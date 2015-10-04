@@ -55,7 +55,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-						<p class="main-heading">Seleccione el servicio a evaluar</p>
+						<p class="main-heading">Servicios</p>
+						<p class="sub-heading">Seleccione el servicio al que desea evaluar.</p>
 					</div>
 				</div>
 			</div>		

@@ -55,7 +55,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-						<p class="main-heading">Seleccione el servicio que quiere ver estadisticas:</p>
+						<p class="main-heading">Estadisticas</p>
+						<p class="sub-heading">Seleccione las estadisticas de evaluacion de servicios.</p>
 					</div>
 				</div>
 			</div>		

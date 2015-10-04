@@ -22,7 +22,7 @@
 		while($row = mysql_fetch_array($sql)){
 			$idPregunta=$row['idPregunta'];
 			$valor = $_POST[$idPregunta];
-			$log= mysql_query("INSERT INTO encuesta (idUsuario, idPregunta, Valoracion) values ('$user','$idPregunta','$valor')");
+			$log= mysql_query("INSERT INTO encuesta (idUsuario, idPregunta, idServicio, Valoracion) values ('$user','$idPregunta','$idServicio','$valor')");
 		}
 	}
 		echo '<script> window.location="../index.php";</script>';

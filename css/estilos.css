@@ -10,7 +10,10 @@ nav{
 	color: #ffffff;
 	height: 20%;
 }
-
+.graf{
+	background: black;
+	color:white;
+}
 
 a:hover{
 	text-decoration: none;
@@ -232,4 +235,7 @@ footer{
 }
 #ser{
 	padding: 2%;
+}
+.progress-bar-default2{
+	background:#202020;
 }
